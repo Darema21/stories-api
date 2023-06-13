@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+10.times do
+  story = Story.create(
+    title: Faker::Fantasy::Tolkien.character,
+    body: Faker::Quote.famous_last_words
+  )
+  story.save
+end
